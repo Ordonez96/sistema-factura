@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block title %}Crear Factura{% endblock %}
+
+{% block content %}
+    <h2>Crear Factura</h2>
+    <form method="POST" action="{% url 'crear_factura' %}">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <br>
+        <button type="submit">Siguiente</button>
+    </form>
+    <br>
+    <button onclick="location.href='{% url 'lista_facturas' %}'">Lista de Facturas</button>
+{% endblock %}

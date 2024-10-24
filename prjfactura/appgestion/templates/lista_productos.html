@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block title %}Lista de Productos{% endblock %}
+
+{% block content %}
+<h2>Lista de Productos</h2>
+<ul>
+    {% for producto in productos %}
+        <li>{{ producto.nombre }} - {{ producto.descripcion }} - ${{ producto.precio }} - {{ producto.stock }} - Color {{ producto.color }} - Estado {{ producto.estado }}</li>
+    {% endfor %}
+</ul>
+<br>
+<button onclick="location.href='{% url 'crear_producto' %}'">Añadir Producto</button>
+{% endblock %}

@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block title %}Crear Detalle de Factura{% endblock %}
+
+{% block content %}
+    <h2>Agregar Detalle a la Factura {{ factura.id }}</h2>
+    <form method="POST" action="{% url 'crear_detalle_factura' factura_id=factura.id %}">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <br>
+        <button type="submit">Guardar Detalle</button>
+    </form>
+    <br>
+    <button onclick="location.href='{% url 'lista_facturas' %}'">Lista de Facturas</button>
+{% endblock %}

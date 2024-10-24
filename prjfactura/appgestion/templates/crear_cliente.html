@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block title %}Crear Cliente{% endblock %}
+
+{% block content %}
+    <h2>Crear Cliente</h2>
+    <form  method="POST">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <br>
+        <button type="submit">Guardar</button>
+    </form>
+    <br>
+    <button onclick="location.href='{% url 'lista_clientes' %}'">Lista de Clientes</button>
+{% endblock %}

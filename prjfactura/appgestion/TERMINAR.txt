@@ -1,0 +1,4 @@
+terminar el proyecto actual
+ver y agregar productos y facturas
+
+agregar un campo a cada tabla como minimo (todas, incluyendo cliente)

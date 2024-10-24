@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block title %}Lista de Clientes{% endblock %}
+
+{% block content %}
+    <h2>Lista de Clientes</h2>
+        <ul>
+            {% for cliente in clientes %}
+                <li>{{ cliente.nombre }} - {{ cliente.direccion }} - {{ cliente.telefono }} - {{ cliente.edad }} años</li>
+            {% endfor %}
+        </ul>
+        <br>
+        <button onclick="location.href='{% url 'crear_cliente' %}'">Añadir Cliente</button>
+{% endblock %}
